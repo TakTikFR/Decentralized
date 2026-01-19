@@ -1,0 +1,210 @@
+{
+  "main": {
+    "id": "5f09dffef728dbe0",
+    "type": "split",
+    "children": [
+      {
+        "id": "ca968943fe2dd8c0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "88df518bd2aaa91e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Beyond A Single AI Cluster A Survey of Decentralized LLM Training.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Beyond A Single AI Cluster A Survey of Decentralized LLM Training"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5e28ea55a723ef22",
+    "type": "split",
+    "children": [
+      {
+        "id": "5d7061e2458b6cf4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "221c92c206e4b417",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "path:",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "b59d2a401b8670fa",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          },
+          {
+            "id": "68c2db8f794e5267",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "0c42b0e2b8a6fd13",
+    "type": "split",
+    "children": [
+      {
+        "id": "1a80915c17a8ff6d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ea918712694f20c9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "e50f5e522de8523d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "b68140541057d120",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "241268c61afa510c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Create new base": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "88df518bd2aaa91e",
+  "lastOpenFiles": [
+    "DECENTRALIZED.md",
+    "Beyond A Single AI Cluster A Survey of Decentralized LLM Training.md",
+    "Decentralized/Beyond A Single AI Cluster A Survey of Decentralized LLM Training.md",
+    "Decentralized/DECENTRALIZED.md",
+    "ProcessMining/Alpha Miner.md",
+    "ProcessMining/Precision.md",
+    "Decentralized",
+    "ProcessMining/Soundness.md",
+    "ProcessMining/Simplicity.md",
+    "ProcessMining/Critère de qualité des modèles.md",
+    "ProcessMining/Fuzzy Miner.md",
+    "ProcessMining/Generalization.md",
+    "ProcessMining/Heuristics Miner.md",
+    "ProcessMining/Inductive Miner.md",
+    "ProcessMining/PROCESS MINING.md",
+    "Untitled.base",
+    "ProcessMining",
+    "Untitled 1.base",
+    "Untitled 2.base",
+    "Untitled 4.base",
+    "Untitled 3.base",
+    "ProcessMining/Fitness.md",
+    "ProcessMining/Images/And-split_pattern_for_petri_nets.png",
+    "ProcessMining/Images/Xor-split_pattern_for_petri_nets.png",
+    "ProcessMining/Images/Sequence_pattern_for_petri_nets.png",
+    "Images/Pasted image 20250810182307.png",
+    "ProcessMining/Images/Pasted image 20250805151345.png",
+    "Images/Pasted image 20250810182442.png",
+    "Images/Pasted image 20250810183039.png",
+    "Images/Pasted image 20250810183154.png",
+    "Images/Pasted image 20250810182918.png",
+    "ProcessMining/Images/Pasted image 20250805150944.png",
+    "ProcessMining/Replay.md",
+    "ProcessMining/Play Out.md",
+    "ProcessMining/Play In.md",
+    "ProcessMining/Images",
+    "Welcome.md"
+  ]
+}
