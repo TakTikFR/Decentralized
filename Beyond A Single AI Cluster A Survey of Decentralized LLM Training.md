@@ -20,12 +20,21 @@ The paper distinguish 3 ways to optimize decentralized LLM training.
 Due to bandwith limitations, it is essential to opitimize communication methods for decentralized model training. It can be done in 2 ways.
 
 ### 1. Reduce Communication Frequency
-
 - Reduce the frequency of parameters synchronisation
 - Larger local batches
 
-### 2. Reduce Communication Intensity
+#### Data Parallelism
+- [ ] [Gaia: Geo-Distributed Machine Learning Approaching LAN Speeds](https://www.usenix.org/system/files/conference/nsdi17/nsdi17-hsieh.pdf)
+- [ ] [Co-learning: Collaborative Deep Learning Across Multiple Data Centers](https://arxiv.org/pdf/1810.06877)
+- [ ] [DeDLOC: Distributed Deep Learning In Open Collaborations](https://arxiv.org/pdf/2106.10207)
+- [ ] [DiLoCo: Distributed Low-Communication Training of Language Models](https://arxiv.org/pdf/2311.08105)
 
+#### Pipeline Parallelism
+- [ ] [Varuna: Scalable, Low-cost Training of Massive Deep Learning Models](https://arxiv.org/pdf/2111.04007)
+- [ ] [DTFM: Decentralized Training of Foundation Models in Heterogeneous Environments](https://arxiv.org/pdf/2206.01288)
+- [ ] [SWARM Parallelism: Training Large Models Can Be Surprisingly Communication-Efficient](https://arxiv.org/pdf/2301.11913)
+
+### 2. Reduce Communication Intensity
 - Dynamically forms group
 - Compression
 - Massive pipeline parallelism
