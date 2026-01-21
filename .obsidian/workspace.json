@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ca968943fe2dd8c0",
+        "id": "6244b8bc39622847",
         "type": "tabs",
         "children": [
           {
-            "id": "88df518bd2aaa91e",
+            "id": "ce880cf3d1298c17",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Beyond A Single AI Cluster A Survey of Decentralized LLM Training.md",
+                "file": "Gaia Geo-Distributed Machine Learning Approaching LAN Speeds.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Beyond A Single AI Cluster A Survey of Decentralized LLM Training"
+              "title": "Gaia Geo-Distributed Machine Learning Approaching LAN Speeds"
             }
           }
         ]
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "path:",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -167,10 +167,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "88df518bd2aaa91e",
+  "active": "ce880cf3d1298c17",
   "lastOpenFiles": [
-    "DECENTRALIZED.md",
     "Beyond A Single AI Cluster A Survey of Decentralized LLM Training.md",
+    "Untitled.base",
+    "Untitled 2.base",
+    "2026-01-21.md",
+    "Untitled.canvas",
+    "DECENTRALIZED.md",
+    "Untitled 1.base",
+    "Gaia Geo-Distributed Machine Learning Approaching LAN Speeds.md",
+    "gaia_system_overview.png",
+    "{2B471860-C20B-4225-AA0F-75D8B5D68A8C}.png",
     "Decentralized/Beyond A Single AI Cluster A Survey of Decentralized LLM Training.md",
     "Decentralized/DECENTRALIZED.md",
     "ProcessMining/Alpha Miner.md",
@@ -184,10 +192,7 @@
     "ProcessMining/Heuristics Miner.md",
     "ProcessMining/Inductive Miner.md",
     "ProcessMining/PROCESS MINING.md",
-    "Untitled.base",
     "ProcessMining",
-    "Untitled 1.base",
-    "Untitled 2.base",
     "Untitled 4.base",
     "Untitled 3.base",
     "ProcessMining/Fitness.md",
@@ -199,8 +204,6 @@
     "Images/Pasted image 20250810182442.png",
     "Images/Pasted image 20250810183039.png",
     "Images/Pasted image 20250810183154.png",
-    "Images/Pasted image 20250810182918.png",
-    "ProcessMining/Images/Pasted image 20250805150944.png",
     "ProcessMining/Replay.md",
     "ProcessMining/Play Out.md",
     "ProcessMining/Play In.md",
