@@ -64,8 +64,21 @@ To reduce communication overhead over WANs they designed ASP, its goal is to ens
 
 To achieve this, ASP is using 3 techniques:
 - **The significance filter**
-	- 
+	- We know that more than 95% of the updates produce less than 1% change to the parameter value
+	- It only sends parameters if their aggregated updates become significant enough.
+	- ASP automatically reduces the significance threshold over time (if $v$ is the original threshold, then at the $t$ iteration the threshold would be $\dfrac{v}{\sqrt{t}}$)
 
+With ASP for significant updates the WAN bandwidth might still be insufficient and in this case the updates can arrive too late, to handle this we use,
+- **Selective barrier**
+	- Main server sends just the list of important update indexes first (not values), telling other centers to pause reading those parameters.
+	- Local workers stop reading affected data until the real updates arrive, keeping everyone in sync within set time limits.
+	- Workers keep going on other tasks while waiting only for key updates, avoiding long stops.
+
+With ASP selective barrier, WAN issues like fluctuating bandwidth or high latency can still delay significant updates. To fix this, we use 
+- **Mirror Clock**:
+	- Each parameter server shares its local "clock" (iteration count) with mirror servers in other data centers holding the same parameters.
+	- If a fast server's clock gets ahead of the slowest mirror by a set limit (DS threshold), it pauses local workers from reading parameters until the slow one catches up.
+	- Guarantees all workers stay in sync regardless of network problems, used only as last resort to ensure convergence (similar to SSP but more targeted).
 # Results and Limitations
 - Résultats :
     - Où le papier brille (datasets, métriques, scénarios).
@@ -79,3 +92,4 @@ To achieve this, ASP is using 3 techniques:
 - Difference between LAN and WAN ?
 - What's BSP and SSP ?
 - Why ASP is approximately correct ?
+- For ASP selective barrier, in case the bandwidth is too low, it send it by small batches ?
