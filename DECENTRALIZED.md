@@ -1,6 +1,6 @@
 
 # Papers
-- [x] [Beyond A Single AI Cluster: A Survey of Decentralized LLM Training](https://arxiv.org/pdf/2503.11023v1)
+- [x] [Beyond A Single AI Cluster: A Survey of Decentralized LLM Training](https://arxiv.org/pdf/2503.11023v3)
 - [ ] [Decentralized Federated Learning: A Survey and Perspective](https://arxiv.org/pdf/2306.01603)
 - [ ] [A Survey on Decentralized Federated Learning](https://arxiv.org/pdf/2308.04604)
 

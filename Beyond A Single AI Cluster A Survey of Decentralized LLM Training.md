@@ -24,10 +24,10 @@ Due to bandwith limitations, it is essential to opitimize communication methods 
 - Larger local batches
 
 #### Data Parallelism
-- [ ] [Gaia: Geo-Distributed Machine Learning Approaching LAN Speeds](https://www.usenix.org/system/files/conference/nsdi17/nsdi17-hsieh.pdf)
+- [x] [Gaia: Geo-Distributed Machine Learning Approaching LAN Speeds](https://www.usenix.org/system/files/conference/nsdi17/nsdi17-hsieh.pdf)
 [[Gaia Geo-Distributed Machine Learning Approaching LAN Speeds]]
-- [ ] [Co-learning: Collaborative Deep Learning Across Multiple Data Centers](https://arxiv.org/pdf/1810.06877)
 - [ ] [DeDLOC: Distributed Deep Learning In Open Collaborations](https://arxiv.org/pdf/2106.10207)
+[[DeDLOC Distributed Deep Learning In Open Collaborations]]
 - [ ] [DiLoCo: Distributed Low-Communication Training of Language Models](https://arxiv.org/pdf/2311.08105)
 
 #### Pipeline Parallelism

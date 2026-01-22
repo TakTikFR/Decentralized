@@ -1,12 +1,11 @@
 ---
 Paper: https://www.usenix.org/system/files/conference/nsdi17/nsdi17-hsieh.pdf
-tags:
+Year: "2017"
+MOC: "[[Beyond A Single AI Cluster A Survey of Decentralized LLM Training]]"
 ---
 ---
 
 # Introduction
-2 - 4 phrases avec le contexte général (fédéré, decentralized, etc...)
-Le problème precis qu'attaque le papier et pourquoi c'est important
 
 Due to the expansion of LLM the need of large computing power to train those models increased, but datacenters have limited space storage, so the idea is to distribute this training among geographical distributed datacenters.
 
@@ -19,11 +18,7 @@ To achieve these goals, such a system needs to address **two key challenges**:
 - Design a general system that effectively handles communication for ML algorithms.
 	- Communication patterns vary significantly across different ML algorithms.
 
-# Background and Motivation
-- Bullet points très concis :
-    - Idée centrale du papier, en une phrase.
-    - Contributions listées en langage à toi (pas recopiées).
-- Optionnel : une mini phrase par contribution expliquant ce que ça change pour toi (lien à ton sujet).
+# Background & Contributions
 
 The paper made 3 major contributions:
 - This is the first work to propose a general geo-distributed ML system that:
@@ -34,19 +29,11 @@ The paper made 3 major contributions:
 	- **ASP** (**A**ppoximate **S**ynchronous **P**arallel) optimize the WAN communication across datacenters.
 	- Provides a theoretical guarantee on algorithm convergence.
 
-- Provides significant performance improvements over two state-of-the-art distributed ML systems by sygnificantly reducing the communication overhead over WANs.
+- Provides significant performance improvements over two state-of-the-art distributed ML systems by significantly reducing the communication overhead over WANs.
 
 # Method
-- Décrire uniquement ce qui est essentiel pour toi :
-    - Architecture / algo / protocole expérimental, avec mots-clés techniques.
-    - Hypothèses fortes et choix de design (topologie, compression, loss, dataset…)
-- Si besoin, sous-sections :
-    - 3.1 Modèle / Algo
-    - 3.2 Protocole expérimenta
-
 
 ![Gaia system overview](gaia_system_overview.png)
-
 
 In Gaia, each data center has some:
 - **Worker Machines**
@@ -79,17 +66,31 @@ With ASP selective barrier, WAN issues like fluctuating bandwidth or high latenc
 	- Each parameter server shares its local "clock" (iteration count) with mirror servers in other data centers holding the same parameters.
 	- If a fast server's clock gets ahead of the slowest mirror by a set limit (DS threshold), it pauses local workers from reading parameters until the slow one catches up.
 	- Guarantees all workers stay in sync regardless of network problems, used only as last resort to ensure convergence (similar to SSP but more targeted).
-# Results and Limitations
-- Résultats :
-    - Où le papier brille (datasets, métriques, scénarios).
-    - Ce qui est vraiment utile/réutilisable pour ton projet.​
-- Limites (très important pour toi) :
-    - Ce qu’ils ne testent pas, hypothèses irréalistes, aspects non adressés (scalabilité, hétérogénéité…).
+# Results & Limitations
 
+- Results:
+	- Runs ML algorithms efficiently across WANs (1.8–53.5× faster than state-of-the-art).
+	- Flexible sync (ASP) works over LANs and heterogeneous WANs.
+	- Efficiently uses scarce WAN bandwidth by skipping insignificant updates (>95% of cases).
+	- Guarantees ML algorithm convergence.
 
+- Limits:
+	- Assume relatively low and stable WAN latency, mirror clock as a last resort only, may block if extreme fluctuations occur.
+	- No evaluations of high WAN latency or faults (focus bandwidth).
+	- WAN costs remain high despite optimizations.
 # Q&A
 
-- Difference between LAN and WAN ?
-- What's BSP and SSP ?
-- Why ASP is approximately correct ?
-- For ASP selective barrier, in case the bandwidth is too low, it send it by small batches ?
+- ==**Difference between LAN and WAN ?**==
+	**LAN (Local Area Network)**, responsible for the intra data center communication between worker machines and parameter servers.
+	
+	**WAN (Wide Area Network)**, its in charge for communication between data centers.
+- ==**What's BSP and SSP ?**==
+	**BSP (Bulk Synchronous Parallel)**: Strict sync where all workers compute, communicate, then wait at a global barrier before next iteration. No staleness, but slow with stragglers.
+
+	**SSP (Stale Synchronous Parallel)**: Sync with bounded staleness (max s clocks apart), workers advance without waiting for everyone, but params may be stale (limit s). Faster than BSP, proven convergence.
+- ==**Why ASP is approximately correct ?**==
+	ASP sends only "significant" updates (threshold > ε), skipping small ones, approximates exact sync with less bandwidth. Proven to converge like exact async SGD under assumptions (bounded gradients, step size).
+- ==**For ASP selective barrier, does it send updates in small batches if bandwidth is too low?**==
+	Yes, indexes are sent first, values follow in background. If WAN saturated, values trickle in batches over time (bounded latency), workers pause only on affected params meanwhile.
+- ==**What does "aggregated" mean in ASP**==
+	Aggregated = cumulative local updates summed until threshold met (e.g., ||sum|| > ε). Once sent significant part, that component resets to zero; others continue aggregating independently per param.
