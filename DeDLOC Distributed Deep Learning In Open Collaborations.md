@@ -1,32 +1,41 @@
 ---
 Paper: https://arxiv.org/pdf/2106.10207
 Year: "2021"
+MOC: "[[Beyond A Single AI Cluster A Survey of Decentralized LLM Training]]"
 ---
 ---
 
 ## Introduction 
-**2–4 phrases courtes :** 
-- Contexte général du domaine (WAN limits, geo-distributed ML, LLM scaling...). 
-- **Problème précis** attaqué par le papier + pourquoi critique. 
-- Objectif principal déclaré. 
-- Optionnel : "Travaux liés clés" avec 2–3 `[[Papier-XYZ]]`.
+
+Using collaborative paradigm for machine learning is difficult due to **high latency**, **asymmetric bandwidth**, and **several challenges unique to volunteer computing**.
+
+This paper designed strategies to allows many independent parties to combine their computational resources, and come up **DeDLOC (Distributed Deep Learning in Open Collaborations)**. Its based on a novel algorithm that adapts to the available hardware in order to maximize the training throughput and accommodate a large number of heterogeneous devices with uneven compute, bandwidth, reliability and networks capabilities.
+
+But there is 3 major problems:
+- A **big range of possible devices** that contribute to the collaborative experiments.
+	- It can goes from GPU to even smartphone.
+
+- **Different internet connection** with **limited bandwidth** and **low reliability**.
+
+- It must handle **devices disconnections** from the training network.
 
 ## Background & Contributions 
-**Bullet points très concis :** 
-- **Sync existants** mentionnés : BSP/SSP/FedAvg (1 ligne chacun). 
-- **Idée centrale** du papier, en une phrase. 
-- **Contributions clés** listées en tes mots : 
-	- Contrib 1 : [Architecture/système] → "Change X pour moi car Y". 
-	- Contrib 2 : [Modèle sync innovant] → "Utile pour Z dans mon setup". 
-	- Contrib 3 : [Perf/proofs] → "Benchmark vs state-of-art".
+
+The contributions can be summarized as follows:
+- Propose a practical recipe for training in collaborative paradigm.
+
+- Novel Distributed training algorithm to maximize the training performance
+
+- Achieved competitive results for collaborative training under realistic conditions, with hundreds of data center GPUs.
 
 ## Method 
-**Focus techniques réutilisables :** 
-- **Technique principale** : Algo/mécanisme avec formules clés (ε threshold, DS staleness).
-- **Sous-techniques** : 2–3 détails implémentation (adaptive tuning, barriers...). 
-- **Theoretical guarantees** : Convergence proof résumé (bounded gradients, step size). 
-- **Datasets/évals** : Algos testés (MF, NN, ImageNet si vision).
 
+To overcome these problems, DeDLOC approaches the issue from three angles:
+- **Ensuring training consistency**
+
+-  **Adaptive averaging algorithm**
+
+- **System design**
 ## Results & Limitations 
 **Résultats (où papier brille) :** 
 - Speedups chiffrés (X× vs baselines nommées). 
