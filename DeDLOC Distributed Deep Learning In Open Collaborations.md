@@ -31,11 +31,42 @@ The contributions can be summarized as follows:
 ## Method 
 
 To overcome these problems, DeDLOC approaches the issue from three angles:
-- **Ensuring training consistency**
+- **Ensuring training consistency**.
+	- **Synchronous data-parallel** training with **fixed hyper parameters**.
+	- Training with **extremely large batches**.
+		- Compensate the relatively **slow communication** by doing **less synchronisations**.
+		- Peer **communicate less frequently**.
+		- Natural way to **deal with heterogenous hardware**.
+	- Each device accumulates gradients until the collaboration **reaches the target batch size**.
+	- Devices exchange their gradients and **perform one optimizer step**.
 
 -  **Adaptive averaging algorithm**
+	Running efficient training on this kind of infrastructure requires a protocol that can *dynamically assign roles to every peer given their hardware and network capabilities*.
+	- Dynamically solves a linear program to **maximize SGD throughput**.
+		- by **assigning roles based on peer capabilities**.
+			- compute performance, bandwidth and pairwise links.
+	- Each peer aggregate a fraction of gradients proportionally to its capacity.
+		- Fastest peers receive more and the slowest peers less.
+	- Uses **Delayed Parameters Updates (DPU)** for compute and communication overlap.
+	- Change global averaging with several consecutive iterations in alternating groups of size $m$.
+		- Groups are defined to obtain the exact average in $\log_mn$ steps.
+		- Apply All-Reduce by groups.
+		- $m$ is bases on the number of peers and their failure rates.
 
 - **System design**
+	- DeDLOC ensures that all peers use up-to-date parameters.
+		- By tracking the number of global steps of each peer.
+		- If a peer is late, it'll downloads latest parameters and optimizer stats from up-to-date peers before resuming.
+	- Requires **backbone peers** 
+		- Stable connection and available at all times (At least one of them).
+		- Responsible for welcoming new peers.
+		- Performing auxiliary functions.
+		- Can be hosted on unexpensive servers without GPU.
+	- **Regular peers**
+		- Depending on their hardware and network bandwidth, they can be assigned to:
+			- Compute gradients.
+			- Aggregate gradients computed by other peers.
+			- Do both compute and aggregate gradients, according to the adaptive averaging algorithm.
 ## Results & Limitations 
 **Résultats (où papier brille) :** 
 - Speedups chiffrés (X× vs baselines nommées). 
