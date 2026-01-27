@@ -68,13 +68,13 @@ With ASP selective barrier, WAN issues like fluctuating bandwidth or high latenc
 	- Guarantees all workers stay in sync regardless of network problems, used only as last resort to ensure convergence (similar to SSP but more targeted).
 # Results & Limitations
 
-- Results:
+- **Results**:
 	- Runs ML algorithms efficiently across WANs (1.8–53.5× faster than state-of-the-art).
 	- Flexible sync (ASP) works over LANs and heterogeneous WANs.
 	- Efficiently uses scarce WAN bandwidth by skipping insignificant updates (>95% of cases).
 	- Guarantees ML algorithm convergence.
 
-- Limits:
+- **Limits**:
 	- Assume relatively low and stable WAN latency, mirror clock as a last resort only, may block if extreme fluctuations occur.
 	- No evaluations of high WAN latency or faults (focus bandwidth).
 	- WAN costs remain high despite optimizations.
