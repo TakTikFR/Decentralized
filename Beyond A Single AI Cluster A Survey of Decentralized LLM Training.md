@@ -26,7 +26,7 @@ Due to bandwith limitations, it is essential to opitimize communication methods 
 #### Data Parallelism
 - [x] [Gaia: Geo-Distributed Machine Learning Approaching LAN Speeds](https://www.usenix.org/system/files/conference/nsdi17/nsdi17-hsieh.pdf)
 [[Gaia Geo-Distributed Machine Learning Approaching LAN Speeds]]
-- [ ] [DeDLOC: Distributed Deep Learning In Open Collaborations](https://arxiv.org/pdf/2106.10207)
+- [x] [DeDLOC: Distributed Deep Learning In Open Collaborations](https://arxiv.org/pdf/2106.10207)
 [[DeDLOC Distributed Deep Learning In Open Collaborations]]
 - [ ] [DiLoCo: Distributed Low-Communication Training of Language Models](https://arxiv.org/pdf/2311.08105)
 
