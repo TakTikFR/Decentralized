@@ -11,14 +11,12 @@
             "id": "ce880cf3d1298c17",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "SWARM Parallelism Training Large Models Can Be Surprisingly Communication-Efficient.md",
-                "mode": "source",
-                "source": false
+                "file": "images/{2E3C6E0B-2276-4F80-A90A-A55C528DFD6D}.png"
               },
-              "icon": "lucide-file",
-              "title": "SWARM Parallelism Training Large Models Can Be Surprisingly Communication-Efficient"
+              "icon": "lucide-image",
+              "title": "{2E3C6E0B-2276-4F80-A90A-A55C528DFD6D}"
             }
           },
           {
@@ -27,16 +25,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DeDLOC Distributed Deep Learning In Open Collaborations.md",
+                "file": "Gaia Geo-Distributed Machine Learning Approaching LAN Speeds.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DeDLOC Distributed Deep Learning In Open Collaborations"
+              "title": "Gaia Geo-Distributed Machine Learning Approaching LAN Speeds"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -196,11 +193,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "414e109e5ca6bdf8",
+  "active": "68c2db8f794e5267",
   "lastOpenFiles": [
+    "images/{5C0A1C82-8A30-4D0D-A047-EB6E535778B3}.png",
     "SWARM Parallelism Training Large Models Can Be Surprisingly Communication-Efficient.md",
-    "DeDLOC Distributed Deep Learning In Open Collaborations.md",
+    "images/{2E3C6E0B-2276-4F80-A90A-A55C528DFD6D}.png",
     "Gaia Geo-Distributed Machine Learning Approaching LAN Speeds.md",
+    "DeDLOC Distributed Deep Learning In Open Collaborations.md",
     "DECENTRALIZED.md",
     "Beyond A Single AI Cluster A Survey of Decentralized LLM Training.md",
     "images",
@@ -234,8 +233,6 @@
     "Images/Pasted image 20250810182307.png",
     "ProcessMining/Images/Pasted image 20250805151345.png",
     "Images/Pasted image 20250810182442.png",
-    "Images/Pasted image 20250810183039.png",
-    "Images/Pasted image 20250810183154.png",
     "ProcessMining/Replay.md",
     "ProcessMining/Play Out.md",
     "ProcessMining/Play In.md",
