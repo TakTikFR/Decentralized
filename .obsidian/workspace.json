@@ -11,12 +11,14 @@
             "id": "ce880cf3d1298c17",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "images/{2E3C6E0B-2276-4F80-A90A-A55C528DFD6D}.png"
+                "file": "SWARM Parallelism Training Large Models Can Be Surprisingly Communication-Efficient.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "{2E3C6E0B-2276-4F80-A90A-A55C528DFD6D}"
+              "icon": "lucide-file",
+              "title": "SWARM Parallelism Training Large Models Can Be Surprisingly Communication-Efficient"
             }
           },
           {
@@ -193,12 +195,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "68c2db8f794e5267",
+  "active": "ce880cf3d1298c17",
   "lastOpenFiles": [
-    "images/{5C0A1C82-8A30-4D0D-A047-EB6E535778B3}.png",
+    "Gaia Geo-Distributed Machine Learning Approaching LAN Speeds.md",
     "SWARM Parallelism Training Large Models Can Be Surprisingly Communication-Efficient.md",
     "images/{2E3C6E0B-2276-4F80-A90A-A55C528DFD6D}.png",
-    "Gaia Geo-Distributed Machine Learning Approaching LAN Speeds.md",
+    "images/{5C0A1C82-8A30-4D0D-A047-EB6E535778B3}.png",
     "DeDLOC Distributed Deep Learning In Open Collaborations.md",
     "DECENTRALIZED.md",
     "Beyond A Single AI Cluster A Survey of Decentralized LLM Training.md",

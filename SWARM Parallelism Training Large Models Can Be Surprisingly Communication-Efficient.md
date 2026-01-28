@@ -48,16 +48,61 @@ In summary te paper make the following contributions:
 
 - **SWARM Parallelism**
 	![[{2E3C6E0B-2276-4F80-A90A-A55C528DFD6D}.png]]
-	- Replace the rigid pipeline structure with **temporary pipelines**
+	- Replace the rigid pipeline structure with **temporary pipelines**.
 		- Temporary pipelines are **built stochastically**.
+
 		- Each peer send their output to any peer in the next pipeline stage.
 			- The **next peer is determined on each iteration**.
 			- If one peer is **faster than others**.
-				- It'll **process inputs from multiple predecessors**
+				- It'll **process inputs from multiple predecessors**.
 				- **Distribute its output to weaker peers** to **maximize utilisation**.
 			- If one peer **disconnects**.
 				- It predecessors reroute their request to its neighbors.
 			- If one peer **joins**.
 				- It'll **download up-to-date parameters and optimizer** from **remaining workers**.
+
 		- This system consists of several consecutive swarms.
-			- Peers within 
+			- Peers within one swarm serve the same pipeline stage.
+				- **Same subset of layers** with the **same parameters**.
+				- **Partitioned into evenly sized stages**.
+
+		- **Forward pass**.
+			- Peers **receive inputs from predecessors**.
+			- Then **send activations to peers in the next stage**.
+
+		- **Backward pass**.
+			- Peers **receive gradients** for outputs.
+			- **Compute gradients** for layer inputs and **accumulate gradients** for parameters.
+			- Once enough gradients are accumulated.
+				- Peers **form groups within their swarm**.
+				- **Run All-Reduc**e to average gradients.
+				- **Perform the optimizer step**.
+
+	- Swarm can use **DPU (Delayed Parameter Updates)**.
+		- **Improve hardware utilisation**.
+			- Performing optimizer step in parallel with processing the next batch.
+
+	- Each peer has **queues for incoming and outgoing request**.
+		- **Maintain high GPU utilization** under latency
+		- **Compensate for varying network speeds**
+
+	- **Stochastic wiring**.
+		- **Dynamically 'wire'** each input through each stage and **pick devices in proportion to their training throughput**.
+		- Better utilize heterogeneous devices and recover from fault.
+
+	- Utilisation of **DHT (Distributed Hash Table)**.
+		- Trainers use **DHT** to list active peers per stage.
+		- Usage of **Interleave Weighted Round-Robin** scheduler.
+			- Each peer is associated with the** total processing time over all previous requests**.
+			- Assigns microbatch independently to the **best-performing** (smallest total processing time) peer.
+		- Trainer don't use GPUs, makes it possible to **run multiple trainers per peer**.
+
+	- **Adaptive sward rebalancing**.
+		- Allows for **automatic rebalancing within a stage**, need **cross-stage for max speed**.
+
+		- **Every $T$ sec** Check **queue size** per stage.
+		- Move Peers from empty to full swarm.
+		- Get parameters and optimizer from new neighbors.
+
+		- New peers automatically go to the best stage.
+		- More peers to compensate hard stages.
