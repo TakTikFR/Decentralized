@@ -106,3 +106,10 @@ In summary te paper make the following contributions:
 
 		- New peers automatically go to the best stage.
 		- More peers to compensate hard stages.
+
+	![[{A9EC768D-AB44-4696-86AC-63D98109C49A}.png]]
+
+## Results & Limitations
+
+- **Results**
+- **Limitations**
