@@ -112,4 +112,17 @@ In summary te paper make the following contributions:
 ## Results & Limitations
 
 - **Results**
+	- Can train **very large models (Tested up to 13B)**.
+	- Pipeline reaches **89% GPU utilization** on large models.
+	- **Effective rebalancing algorithm**, maintains throughput despite **30-50% peers crashing/leaving**.
+
 - **Limitations**
+	- **Ineffective pipeline on small models**, Worse than offloading (communication dominates).
+	- Needs many peers, **more than 1 peer per stage** for fault tolerance.
+	- **High latency sensitive**, Works up to 100ms, degrades beyond.
+
+## Q&A
+
+- ==**In 'stochastic wiring', what they mean by 'stochastic' ?**==
+	Trainers track **past processing times** per peer, then **route** microbatches to **fastest ones** more often with **IWRR (Interleaved Weighted Round Robin)**.
+- 
