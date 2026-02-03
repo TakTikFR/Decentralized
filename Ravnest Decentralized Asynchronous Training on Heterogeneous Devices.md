@@ -97,9 +97,20 @@ The main contributions of this paper are summarized as follows:
 		- Efficient parameter averaging across clusters and heterogeneous consumer grade PCs.
 	- **Zero-bubble Asynchronous Model Parallelism**
 		- Within each cluster further minimizes the idle time bubble on every node.
-	- **Validate the convergence** and linear speedup characteristics.
+	- **Validate the convergence** and linear speedup characteristics with **τ ≤ O(K^{1/4})**.
 	- **Memory reduction**, competitive convergence against synchronous baselines.
 
 - **Limitations**
 	- **No large LLMs** tested.
-	- 
+	- May have problem with an **extreme heterogeneity of devices**.
+	- Theoretical convergence requires **τ ≤ O(K^{1/4})**, **sensitive to very slow stragglers or high internet latency**.
+	- **Communication overhead** by **periodic All-Reduce** still costly for very large models / many clusters.
+
+## Q&A
+
+- ==**What's staleness ?**==
+	**Staleness (τ_k)** is the number of **model updates** that occurred **between forward pass** and **backward pass**. Forward uses **old parameters**, backward propagates **stale gradients** from later model state.
+- ==**What is Cross-Mesh Resharding ?**== 
+	**Cross-mesh resharding** is the communication pattern that occurs when a **sharded tensor** must be **transferred and reshaped** between **two different device meshes** (groups of GPUs) with **different sharding layouts**. It combines **tensor exchange** (pipeline boundary) and **layout conversion** (intra-op to inter-op parallelism change).
+- ==**What is "Overlapping an Optimized Cross-Mesh Resharding" ?**==
+	**Overlapping optimized cross-mesh resharding** means **hiding communication latency** by **scheduling** the optimized resharding (broadcast-based, load-balanced) **in parallel with adjacent stage computations** in pipeline parallelism. Multiple resharding tasks **overlap** with forward/backward passes via advanced pipelining schedules. 
