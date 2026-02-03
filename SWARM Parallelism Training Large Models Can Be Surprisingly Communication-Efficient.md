@@ -124,5 +124,9 @@ In summary te paper make the following contributions:
 ## Q&A
 
 - ==**In 'stochastic wiring', what they mean by 'stochastic' ?**==
-	Trainers track **past processing times** per peer, then **route** microbatches to **fastest ones** more often with **IWRR (Interleaved Weighted Round Robin)**.
-- 
+	Trainers track **past processing times** per peer, then **route** micro-batches to **fastest ones** more often with **IWRR (Interleaved Weighted Round Robin)**.
+- ==**Does peers train with the same batches ?**==
+	Each peer train with a distinct micro batch (**1 peer = 1 distinct micro-batch**)
+- ==**In the 'SWARM Parallelism' schema, what that means when a peer receives data from multiple predecessors ?**==
+	The wires between **peers of different stages send only activations**.
+	So when a peer receives from multiple predecessors, it receives more activations trained with different micro-batches.
