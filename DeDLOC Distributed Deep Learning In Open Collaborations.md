@@ -81,20 +81,21 @@ To overcome these problems, DeDLOC approaches the issue from three angles:
 		- Once the first several exemples are obtained, it can begin the training
 		- Loads shards in a different random order and shuffle the data.
 			- Ensure training exemples are independent and identically distributed.
-## Results & Limitations 
-**Results**:
-DeDLOC demonstrates effectiveness in vision (SwAV / ImageNet), controlled NLP (ALBERT / WikiText), and real-world applications (sahajBERT Bengali with 40 volunteers).
+## Results & Limitations
 
-- Enables large scale distributed training regardless of hardware and network.
-- Maintains its efficiency in a broad range of conditions.
-- Faster than traditional methods on mixed infrastructure
-- Scalable up to ~40 simultaneous active peers
+- **Results**:
+	DeDLOC demonstrates effectiveness in vision (SwAV / ImageNet), controlled NLP (ALBERT / WikiText), and real-world applications (sahajBERT Bengali with 40 volunteers).
 
-**Limits**: 
-- Need to gather a community of volunteers
-- Need backbone server
-- 2-3× less efficient FLOPs than conventional clusters
-- Medium models only (not giant LLMs)
+	- Enables large scale distributed training regardless of hardware and network.
+	- Maintains its efficiency in a broad range of conditions.
+	- Faster than traditional methods on mixed infrastructure
+	- Scalable up to ~40 simultaneous active peers
+
+- **Limitations**: 
+	- Need to gather a community of volunteers
+	- Need backbone server
+	- 2-3× less efficient FLOPs than conventional clusters
+	- Medium models only (not giant LLMs)
 
 ## Q&A 
 
