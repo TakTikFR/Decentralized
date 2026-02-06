@@ -74,7 +74,7 @@ With ASP selective barrier, WAN issues like fluctuating bandwidth or high latenc
 	- Efficiently uses scarce WAN bandwidth by skipping insignificant updates (>95% of cases).
 	- Guarantees ML algorithm convergence.
 
-- **Limits**:
+- **Limitations**:
 	- Assume relatively low and stable WAN latency, mirror clock as a last resort only, may block if extreme fluctuations occur.
 	- No evaluations of high WAN latency or faults (focus bandwidth).
 	- WAN costs remain high despite optimizations.
