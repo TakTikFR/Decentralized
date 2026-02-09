@@ -19,7 +19,7 @@ The reasons for the need for Ravnest are as follows:
 - Even pipeline parallelism still **requires frequent communication** and suffers when devices are **heterogeneous or over the internet**.
 - Existing methods are not designed for **regular heterogeneous PCs** with limited bandwidth and reliability on the public internet.
 
-## Background & Contributions
+## Contributions
 
 The main contributions of this paper are summarized as follows:
 - Ravnest, a **novel asynchronous parallel training approach **.
