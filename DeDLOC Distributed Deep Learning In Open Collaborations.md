@@ -19,7 +19,7 @@ But there is 3 major problems:
 
 - It must handle **devices disconnections** from the training network.
 
-## Background & Contributions 
+## Contributions 
 
 The contributions can be summarized as follows:
 - Propose a practical recipe for training in collaborative paradigm.
@@ -44,7 +44,7 @@ To overcome these problems, DeDLOC approaches the issue from three angles:
 	- Devices exchange their gradients and **perform one optimizer step**.
 
 -  **Adaptive averaging algorithm**
-	Running efficient training on this kind of infrastructure requires a protocol that can *dynamically assign roles to every peer given their hardware and network capabilities*.
+	Running efficient training on this kind of infrastructure requires a protocol that can dynamically assign roles to every peer given their hardware and network capabilities.
 	
 	- Dynamically solves a linear program to **maximize SGD throughput**.
 		- by **assigning roles based on peer capabilities**.
