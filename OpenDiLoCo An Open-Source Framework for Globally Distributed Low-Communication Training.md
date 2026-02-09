@@ -14,7 +14,7 @@ This paper also conduct an ablation study of DiLoCo, focusing on:
 - Scalability in compute efficiency.
 - Gradients compression with FP16.
 
-## Background & Contributions
+## Contributions
 
 The contributions of their work are as follows:
 - **Reproduction and scaling of DiLoCo experiments**.
