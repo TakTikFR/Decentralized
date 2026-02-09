@@ -19,7 +19,7 @@ But to do so you have to find how to:
 - **Compress communication** for low bandwidth.
 - Overcoming the problem of the **number of pipeline parallelism steps**.
 
-## Background & Contributions 
+## Contributions 
 
 In summary te paper make the following contributions:
 - Formulate the **Square-Cube Law** of distributed training
@@ -93,7 +93,7 @@ In summary te paper make the following contributions:
 	- Utilisation of **DHT (Distributed Hash Table)**.
 		- Trainers use **DHT** to list active peers per stage.
 		- Usage of **Interleave Weighted Round-Robin** scheduler.
-			- Each peer is associated with the** total processing time over all previous requests**.
+			- Each peer is associated with the **total processing time over all previous requests**.
 			- Assigns microbatch independently to the **best-performing** (smallest total processing time) peer.
 		- Trainer don't use GPUs, makes it possible to **run multiple trainers per peer**.
 
@@ -130,3 +130,7 @@ In summary te paper make the following contributions:
 - ==**In the 'SWARM Parallelism' schema, what that means when a peer receives data from multiple predecessors ?**==
 	The wires between **peers of different stages send only activations**.
 	So when a peer receives from multiple predecessors, it receives more activations trained with different micro-batches.
+- ==**What they mean by accumulated enough gradient ? How they know their is enough gradients ?**==
+	**"Enough gradients"** means accumulating gradients from **a full global batch** of micro-batches during pipeline backward passes.
+	
+	Peers know it's enough when **local gradient buffers reach the target batch size** (deterministic per pipeline schedule), triggering group formation and all-reduce.
