@@ -18,7 +18,7 @@ To achieve these goals, such a system needs to address **two key challenges**:
 - Design a general system that effectively handles communication for ML algorithms.
 	- Communication patterns vary significantly across different ML algorithms.
 
-# Background & Contributions
+# Contributions
 
 The paper made 3 major contributions:
 - This is the first work to propose a general geo-distributed ML system that:
